@@ -156,25 +156,3 @@ select {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 8px;
-  margin-top: 16px;
-}
-
-.cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
-  background-color: lightgray;
-  height: 50px;
-  cursor: pointer;
-}
-
-p {
-  margin: 8px 0;
-}

@@ -50,7 +50,9 @@ export default function WeatherWidget() {
           <>
             <p>City: {weatherData.name}</p>
             <p>Temperature: {weatherData.main.temp}°C</p>
+            <p>Humidity: {weatherData.main.humidity}%</p>
             <p>Conditions: {weatherData.weather[0].description}</p>
+            <p>Wind Speed: {(weatherData.wind.speed * 3.6).toFixed(2)} km/h</p>
           </>
         ) : (
           <p>Loading weather data...</p>

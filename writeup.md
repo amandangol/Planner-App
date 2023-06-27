@@ -1,6 +1,6 @@
 # Custom-Made Widget Description
 
-The custom widget that's added on the planner app is <strong>Weather Widget</strong> which can fetch the weather data on the basis of location.
+The custom widget that's added on the planner app is <strong>Weather Widget</strong> which can fetch the weather data on the basis of current location.
 
 ## Why the Weather Widget?
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const apiKey = "b05d1e7552aa6c35175d8a6a0055b37f";
+const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 export default function WeatherWidget() {
   const [weatherData, setWeatherData] = useState(null);
@@ -10,18 +10,23 @@ export default function WeatherWidget() {
     const fetchWeatherData = async () => {
       try {
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(async (position) => {
-            const { latitude, longitude } = position.coords;
+          navigator.geolocation.getCurrentPosition(
+            async (position) => {
+              const { latitude, longitude } = position.coords;
 
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`);
-            const data = await response.json();
+              const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`);
+              const data = await response.json();
 
-            if (response.ok) {
-              setWeatherData(data);
-            } else {
-              setError(data.message);
+              if (response.ok) {
+                setWeatherData(data);
+              } else {
+                setError(data.message);
+              }
+            },
+            () => {
+              setError('Access to location was denied.');
             }
-          });
+          );
         } else {
           setError('Geolocation is not supported by this browser.');
         }
@@ -35,7 +40,7 @@ export default function WeatherWidget() {
 
   return (
     <div style={{ minWidth: 300 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'row' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p>Weather</p>
       </div>
       <div className="weather-container">

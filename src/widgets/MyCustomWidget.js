@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+const apiKey = "b05d1e7552aa6c35175d8a6a0055b37f";
 
 export default function WeatherWidget() {
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch weather data based on user's current location
     const fetchWeatherData = async () => {
       try {
         if (navigator.geolocation) {
@@ -19,14 +19,14 @@ export default function WeatherWidget() {
             if (response.ok) {
               setWeatherData(data);
             } else {
-              console.error('Error fetching weather data:', data.message);
+              setError(data.message);
             }
           });
         } else {
-          console.error('Geolocation is not supported by this browser.');
+          setError('Geolocation is not supported by this browser.');
         }
       } catch (error) {
-        console.error('Error fetching weather data:', error);
+        setError(error.message);
       }
     };
 
@@ -39,7 +39,9 @@ export default function WeatherWidget() {
         <p>Weather</p>
       </div>
       <div className="weather-container">
-        {weatherData ? (
+        {error ? (
+          <p>Error fetching weather data: {error}</p>
+        ) : weatherData ? (
           <>
             <p>City: {weatherData.name}</p>
             <p>Temperature: {weatherData.main.temp}°C</p>

@@ -12,7 +12,7 @@ export default function WidgetGalleryModal({ setShowWidgetModal, selectedWidgetA
     { component: <TimerWidget />, name: "Timer" },
     { component: <CalendarWidget />, name: "Calendar" },
     { component: <WeatherWidget />, name: "Weather" }, // Add the WeatherWidget to the galleryWidgets
-
+   
   ])
   return (
     <div className="modal"

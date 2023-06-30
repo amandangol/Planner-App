@@ -5,9 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   background-repeat: no-repeat;
-  background-size: cover
-
-   
+  background-size: cover;
 }
  
 .container {
@@ -80,6 +78,8 @@
 select {
  background-color: #efaeae;
 }
+
+
  
 /* Modal */
 .modal {

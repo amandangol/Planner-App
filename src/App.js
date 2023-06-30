@@ -12,8 +12,8 @@ function App() {
  const [widgets, setWidgets] = useState([
   { id: new Date().getTime(), component: <ClockWidget />, area: 'main-widget', name: "Date and Time" },
   { id: new Date().getTime() + 2, component: <CalendarWidget />, area: 'right-widget', name: "Calendar" },
-  { id: new Date().getTime() + 1, component: <TimerWidget />, area: 'left-widget', name:"Timer" },
-  { id: new Date().getTime() + 3, component: <WeatherWidget />, area: 'main-widget', name: "Weather" }, // Add the WeatherWidget to the widgets
+  { id: new Date().getTime() + 1, component: <TimerWidget />, area: 'main-widget', name:"Timer" },
+  { id: new Date().getTime() + 3, component: <WeatherWidget />, area: 'left-widget', name: "Weather" }, // Add the WeatherWidget to the widgets
 
  ])
  const [showWidgetModal, setShowWidgetModal] = useState(false)

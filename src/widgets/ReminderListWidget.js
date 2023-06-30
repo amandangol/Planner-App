@@ -5,7 +5,7 @@ export default function ReminderListWidget() {
  
   useEffect(() => {
     let reminderList = JSON.parse(localStorage.getItem('reminderList')) || []
-    if (!reminderList || reminderList == "undefined") {
+    if (!reminderList || reminderList === "undefined") {
       reminderList = []
     }
     setReminderListData(reminderList)

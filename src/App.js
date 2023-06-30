@@ -5,7 +5,7 @@ import WidgetGalleryModal from './modals/WidgetGalleryModal';
 import Draggable from 'react-draggable';
 import TimerWidget from './widgets/TimerWidget';
 import CalendarWidget from './widgets/CalendarWidget';
-import WeatherWidget from './widgets/MyCustomWidget';
+import QuoteWidget from './widgets/MyCustomWidget';
 
  
 function App() {
@@ -13,7 +13,7 @@ function App() {
   { id: new Date().getTime(), component: <ClockWidget />, area: 'main-widget', name: "Date and Time" },
   { id: new Date().getTime() + 2, component: <CalendarWidget />, area: 'right-widget', name: "Calendar" },
   { id: new Date().getTime() + 1, component: <TimerWidget />, area: 'main-widget', name:"Timer" },
-  { id: new Date().getTime() + 3, component: <WeatherWidget />, area: 'left-widget', name: "Weather" }, // Add the WeatherWidget to the widgets
+  { id: new Date().getTime() + 3, component: <QuoteWidget />, area: 'left-widget', name: "QuoteTask" }, 
 
  ])
  const [showWidgetModal, setShowWidgetModal] = useState(false)

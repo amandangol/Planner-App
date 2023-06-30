@@ -1,5 +1,5 @@
 {
-  "name": "planner-app",
+  "name": "planner-app-widget",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "depcheck": "^1.4.3",
     "dotenv-webpack": "^8.0.1"
   }
 }

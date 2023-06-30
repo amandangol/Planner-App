@@ -1,4 +1,4 @@
- The custom-made widget which I think is an appropriate widget to have in the planner app is <strong>QuoteWidget combined with TaskManagerWidget.</strong>
+ The custom-made widget which I think is an appropriate widget to have in the planner app is <strong>TaskManagerWidget combined with QuoteWidget.</strong>
 
  Here's a write-up that includes information about the Task Manager Widget and its relationship to the Quote Widget:
 

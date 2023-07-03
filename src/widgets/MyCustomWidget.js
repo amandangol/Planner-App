@@ -1,11 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faShareSquare } from '@fortawesome/free-solid-svg-icons';
-import ShuffleIcon from '../icons/shuffle.svg';
-import ClipboardIcon from '../icons/clipboard.svg';
-import RemoveIcon from '../icons/delete.svg';
-import EditIcon from '../icons/edit.svg';
-
 
 const QuoteWidget = () => {
   const [quote, setQuote] = useState('');
@@ -55,12 +48,12 @@ const QuoteWidget = () => {
       <div className="author">- {author}</div>
       <div className="button-container">
       <button className="randomize-button tooltip" onClick={handleRandomize}>
-  <img src={ShuffleIcon} alt="Shuffle" className="shuffle-icon" width="20" height="20" />
+      <i className="fas fa-random"></i>
   <span className="tooltiptext">Shuffle</span>
 </button>
 
 <button className="copy-button tooltip" onClick={handleCopyToClipboard}>
-  <img src={ClipboardIcon} alt="Clipboard" className="clipboard-icon" width="20" height="20" />
+<i className="fas fa-clipboard"></i>
   <span className="tooltiptext">Copy to Clipboard</span>
 </button>
 
@@ -75,7 +68,7 @@ const QuoteWidget = () => {
 const TaskManagerWidget = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
-  const [editTaskIndex, setEditTaskIndex] = useState(null); // Track the index of the task being edited
+  const [editTaskIndex, setEditTaskIndex] = useState(null); 
   const [editedTask, setEditedTask] = useState('');
 
   const addTask = () => {
@@ -145,17 +138,20 @@ const TaskManagerWidget = () => {
                 />
               ) : (
                 <>
-                  <label className="task-checkbox">
-                    <input
-                      type="checkbox"
-                      checked={task.done}
-                      onChange={() => toggleTaskDone(index)}
-                    />
-                    <span className="checkmark"></span>
-                  </label>
-                  <span className={`task-text ${task.done ? 'done' : ''}`}>
-                    {task.text}
-                  </span>
+                 <label className="task-checkbox">
+                <input
+                  type="checkbox"
+                  checked={task.done}
+                  onChange={() => toggleTaskDone(index)}
+                />
+                <span className="checkmark">
+                  {task.done && <i className="fas fa-check"></i>}
+                </span>
+              </label>
+              <span className={`task-text ${task.done ? 'done' : ''}`}>
+                {task.text}
+              </span>
+
                 </>
               )}
                <div className="action-button-space"></div>  
@@ -167,14 +163,14 @@ const TaskManagerWidget = () => {
                   
                 ) : (
                   <button className="edit-task-button" onClick={() => editTask(index)}>
-                    <img src={EditIcon} alt="Edit" className="action-icon" width="16" height="16" />
+                   <i className="fas fa-edit"></i>
                   </button>
                   
                 )}
-               <div className="action-button-space"></div>
-                
+               <div className="action-button-space"></div> 
                 <button className="remove-task-button" onClick={() => removeTask(index)}>
-                  <img src={RemoveIcon} alt="Remove" className="action-icon" width="16" height="16"/>
+                <i className="fas fa-trash"></i>
+
                 </button>
               </div>
             </li>
